@@ -1,0 +1,20 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        int i =1;
+        Scanner scan = new Scanner(System.in);
+        boolean a = true;
+        while(a){
+            try{
+                String b = scan.nextLine(); 
+                System.out.println(i + " " + b);
+                i++;
+            }catch(Exception e){
+                a = false;
+            }
+        }
+    }
+}
