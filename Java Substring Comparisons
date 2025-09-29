@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    
+    public static String getSmallestAndLargest(String word,int num){
+        ArrayList<String> words = new ArrayList<>();
+        
+        if(num==word.length()){
+            return word + " " + word;
+        }
+        for(int i=0;i<=(word.length()-num);i++){
+            String numLetteredWord = word.substring(i,i+(num));
+            words.add(numLetteredWord);
+        }
+        String smallest = words.get(0);
+        String largest = words.get(0);
+        
+        for(String a : words){
+            if(a.compareTo(smallest) < 0) {
+                smallest = a;
+            }
+            if(a.compareTo(largest) > 0) {
+                largest = a;
+            }
+}
+            return smallest + " " + largest;
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String word = scan.next();
+        int num = scan.nextInt();
+        
+        String smallestAndLargest = getSmallestAndLargest(word, num);
+        String[] words = smallestAndLargest.split(" ");
+        for(String a : words) {
+            System.out.println(a);
+            }
+        }
+    }
