@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String sentence = scan.nextLine();
+        
+        String[] specialCharacters = {" ","!",",","?",".","_","\'","@"};
+        String token = "";
+        ArrayList<String> tokens = new ArrayList<>();
+        String[] letters = sentence.split("");
+        for (String letter:letters){
+            boolean found = false;
+            for(String specialChar : specialCharacters){
+                if(specialChar.contains(letter)){
+                    tokens.add(token.trim());
+                    token = "";
+                    found = true;
+                    break;
+                }
+                }if(!found){
+                    token = token + letter;
+            }
+        }if(!token.isEmpty()) {
+            tokens.add(token.trim());
+        }
+        tokens.removeIf(String::isEmpty);
+        System.out.println(tokens.size());
+        for(String toke:tokens){
+            if(toke!=" "){
+            System.out.println(toke);
+            }
+        }
+    }
+}
+
