@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String A = scan.next();
+        String reverse = "";
+        
+        String[] letters = A.split("");
+        for(int i=A.length();i>0;i--){
+            reverse = reverse + letters[i-1];
+        }
+        if(reverse.equals(A)){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
+    }
+}
