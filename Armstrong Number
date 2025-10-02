@@ -1,0 +1,37 @@
+/*Statement:
+A number is called an Armstrong number if the sum of its digits raised to the power of the number of digits equals the number itself.
+Input Format:
+
+A single integer n
+
+Output Format:
+
+Print "Yes" if the number is Armstrong, else "No".
+
+Constraints:
+
+1 ≤ n ≤ 10^9 */
+
+
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int sum=0;
+        String num = String.valueOf(n);
+        String numbers[] = num.split("");
+        
+        for(int i=0;i<numbers.length;i++){
+            int j = Integer.parseInt(numbers[i]);
+            sum = sum + (int)(Math.pow(j,numbers.length));
+        }
+        
+        if(sum==n){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
+    }
+}
