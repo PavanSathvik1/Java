@@ -1,0 +1,26 @@
+/*Statement:
+Given a positive integer n, find the sum of its digits.
+
+Input Format:
+
+A single integer n
+
+Output Format:
+
+A single integer representing the sum of the digits of n.*/
+
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        long num = scan.nextLong();
+        String number = String.valueOf(num);
+        String numbers[] = number.split("");
+        int sum=0;
+        for(int i=0;i<numbers.length;i++){
+            sum = sum+Integer.parseInt(numbers[i]);
+        }
+        System.out.println(sum);
+    }
+}
