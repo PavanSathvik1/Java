@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String sentence = scan.nextLine();
+        String words[] = sentence.split(" ");
+        String reversewords[] = new String[words.length];
+        for(int i=words.length;i>0;i--){
+            reversewords[words.length-i] = words[i-1];
+        }
+        for(int i=0;i<reversewords.length;i++){
+            System.out.print(reversewords[i]);
+            if(i!=reversewords.length-1){
+                System.out.print(" ");
+            }
+        }
+    }
+}
